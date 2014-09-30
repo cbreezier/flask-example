@@ -1,0 +1,26 @@
+// Install the required python libraries with the pip requirements file
+pip install -r req.txt
+
+// 'sudo -u postgres' allows you to run a command as the user postgres
+// 'psql' is the postgresql terminal front-end
+// 'postgres' is the user postgres again
+sudo -u postgres psql postgres
+
+// Once the interactive prompt appears
+// Set a password for the "postgres" database role using the command:
+\password postgres
+
+// Exit the terminal (^D works) then create a database called 'example'
+sudo -u postgres createdb example
+
+// Now create the tables as defined in app.py
+// Open a python console
+python
+>>> from app import db
+>>> db.create_all()
+
+// Now add a sample user
+>>> from app import User
+>>> bob = User('Bob', 'bob@example.com', 'password')
+>>> db.session.add(bob)
+>>> db.session.commit()
