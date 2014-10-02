@@ -58,7 +58,6 @@ class RegisterForm(Form):
 def show_users():
     users = User.query.all()
     logged_in = current_user
-    print logged_in
 
     return render_template('show_users.html', title='Users', users=users, logged_in=logged_in)
 

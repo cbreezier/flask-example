@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "myapp/base.html" %}
 {% block body %}
   <h1>Register</h1>
   {% if error %}
@@ -6,7 +6,7 @@
       <strong>Error:</strong> {{ error }}
     </div>
   {% endif %}
-  <form class="form-horizontal" action="{{ url_for('register') }}" method="POST">
+  <form class="form-horizontal" action="{{ url_for('myapp.register') }}" method="POST">
     {{ form.hidden_tag() }}
     <div class="form-group">
       {{ form.username.label(class="col-sm-2 control-label") }}
