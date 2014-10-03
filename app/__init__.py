@@ -28,7 +28,7 @@ def not_found(error):
 from app.myapp.controllers import myapp
 
 # Register blueprint(s)
-app.register_blueprint(myapp, url_prefix='/')
+app.register_blueprint(myapp, url_prefix='/myapp')
 
 # Build the database:
 # This will create the database file using SQLAlchemy
